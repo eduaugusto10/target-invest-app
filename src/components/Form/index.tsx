@@ -2,6 +2,9 @@ import React, { ChangeEvent, useState } from 'react'
 import { Button, Input, Text } from '../../styleglobal'
 import { useNavigate } from 'react-router-dom'
 import api from '../../service/api'
+import { errorMessage, successMessageCreate } from '../ToastConfig';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Form() {
     const [name, setName] = useState<string>('')
@@ -22,15 +25,17 @@ function Form() {
                     },
                 })
                 .then((result) => {
+                    successMessageCreate()
                     history("/admin");
                 });
         } catch (error) {
-            console.log(error);
+            errorMessage()
         }
     }
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <ToastContainer />
             <Text>Nome</Text>
             <Input type="text" onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)} value={name} />
             <Text>E-mail</Text>

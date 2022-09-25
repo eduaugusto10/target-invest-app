@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState, useEffect } from 'react'
 import { Button, Input, Text } from '../../styleglobal'
 import { useNavigate, useLocation } from 'react-router-dom'
 import api from '../../service/api'
+import { errorMessage, successMessageChange } from '../ToastConfig';
 
 function Form() {
     const [name, setName] = useState<string>('')
@@ -35,10 +36,11 @@ function Form() {
                     },
                 })
                 .then((result) => {
+                    successMessageChange()
                     history("/admin");
                 });
         } catch (error) {
-            console.log(error);
+            errorMessage()
         }
     }
 
@@ -50,8 +52,6 @@ function Form() {
             <Input type="email" onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} value={email} />
             <Text>Número da Conta</Text>
             <Input type="text" onChange={(e: ChangeEvent<HTMLInputElement>) => setAccount(e.target.value)} value={account} />
-            
-            
             <div>
                 <Button onClick={() => history("/admin")}>Voltar</Button>
                 <Button onClick={SaveData}>Salvar</Button>

@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from '../../assets/svg.svg'
 import api from '../../service/api';
 import { isAuthenticated, setToken } from '../../service/auth';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 function Home() {
   const history = useNavigate()
@@ -32,6 +33,7 @@ function Home() {
 
   return (
     <Container>
+      <ToastContainer />
       <Logo width={200} height={200} />
       <Card>
         <Text>E-mail</Text>

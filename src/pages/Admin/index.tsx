@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Button, List, Text, MiniDiv, ButtonAction } from "../../styleglobal";
 import Header from "../../components/Header";
 import { useNavigate } from 'react-router-dom'
-import { getToken, logoutToken, setID } from '../../service/auth'
+import { getToken, logoutToken } from '../../service/auth'
 import api from "../../service/api";
+import { errorMessageDelete, successMessageDelete, errorSession } from "../../components/ToastConfig";
 
 interface IProfile {
     id: number
@@ -31,11 +32,12 @@ function Admin() {
     function DeleteUser(e: number) {
         try {
             api.delete(`/user/${e}`).then(result => {
-                console.log("Usuário deletado")
                 setUpdateList(true)
+                successMessageDelete()
             })
         } catch (error) {
-            console.log(error)
+            console.log('Erro ao deletar')
+            errorMessageDelete()
         }
     }
     useEffect(() => {
@@ -47,7 +49,7 @@ function Admin() {
             setDataValue(result.data)
             setUpdateList(false)
         }).catch(error => {
-            console.log("sessão finalizada")
+            errorSession()
             logoutToken()
             history("/");
         })
