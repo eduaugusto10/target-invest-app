@@ -3,6 +3,7 @@ import { Button, Input, Text } from '../../styleglobal'
 import { useNavigate, useLocation } from 'react-router-dom'
 import api from '../../service/api'
 import 'react-toastify/dist/ReactToastify.css';
+import { getID } from '../../service/auth';
 
 function FormMonth() {
     const [name, setName] = useState<string>()
@@ -13,7 +14,7 @@ function FormMonth() {
 
     useEffect(() => {
         try {
-            api.get(`/user/${location.state.id}`).then((result) => {
+            api.get(`/user/${getID}`).then((result) => {
                 setName(result.data.name);
 
             });

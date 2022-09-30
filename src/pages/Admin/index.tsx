@@ -41,7 +41,7 @@ function Admin() {
         }
     }
     useEffect(() => {
-        api.get('/users', {
+        api.get('/user', {
             headers: {
                 'Authorization': `Bearer ${getToken()}`
             }

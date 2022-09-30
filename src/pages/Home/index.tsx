@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 import { Input, Container, Button, Card, Text, Image, Span } from '../../styleglobal';
 import { ReactComponent as Logo } from '../../assets/svg.svg'
 import api from '../../service/api';
-import { isAuthenticated, setToken } from '../../service/auth';
+import { isAuthenticated, setID, setToken, setName } from '../../service/auth';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
@@ -22,8 +22,9 @@ function Home() {
           "Access-Control-Allow-Origin": "*",
         },
       }).then(result => {
-        console.log(result.data)
         setToken(result.data.token)
+        setID(result.data.user.id)
+        setName(result.data.user.name)
         history("/main");
       })
     } catch (error) {
