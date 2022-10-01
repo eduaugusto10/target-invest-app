@@ -7,7 +7,6 @@ import { errorMessage, successMessageChange } from '../ToastConfig';
 function Form() {
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
-    const [password, setPassword] = useState<string>('')
     const [account, setAccount] = useState<string>('')
     const history = useNavigate()
     const location = useLocation()

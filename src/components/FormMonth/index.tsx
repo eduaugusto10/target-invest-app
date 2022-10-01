@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Input, Text } from '../../styleglobal'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import api from '../../service/api'
 import 'react-toastify/dist/ReactToastify.css';
 import { getID } from '../../service/auth';
@@ -9,7 +9,6 @@ function FormMonth() {
     const [name, setName] = useState<string>()
 
     const history = useNavigate()
-    const location = useLocation()
 
 
     useEffect(() => {
