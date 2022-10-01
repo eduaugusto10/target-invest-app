@@ -19,8 +19,10 @@ function Header() {
             <div style={{ display: 'flex', flexDirection: 'row', margin: '20px' }}>
                 <ToastContainer />
                 <Text>Olá, {getName()}</Text>
-                <Logout onClick={handleLogout} width={20} height={20} style={{ paddingLeft: '10px', paddingTop: '10px', cursor: 'pointer' }} />
-                <Text onClick={handleLogout} style={{ cursor: 'pointer' }}>Sair</Text>
+                <div onClick={handleLogout} style={{ borderRadius: '5px', border:'1px solid #c4c4c4', cursor: 'pointer', padding: '7px' }}>
+                <Logout width={20} height={20}  />
+                <Text style={{fontSize:'1em'}}>Sair</Text>
+                </div>
             </div>
         </div>
     )

@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+    
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     align-items: center;
     background-color: black;
-    width: 100vw;
     `;
-    
-export const Image = styled.img `
+
+export const Image = styled.img`
     width: 200px;
     height: 200px;
 `;
@@ -19,7 +19,14 @@ export const Card = styled.div`
     flex-direction: column;
     border: 2px solid #efb810;
     padding: 30px;
+    margin: 30px;
     text-align: left;
+    width: 60%;    
+    align-content: center;
+    align-items: center;
+    @media only screen and (max-width: 1000px) {
+        height: 100%;
+    }  
 `
 export const Text = styled.span`
     font-size: 1rem;
@@ -51,6 +58,17 @@ export const Input = styled.input`
     color: black;
     font-size: 1.2rem;
 `;
+export const Title = styled.span`
+    color: #FFF;
+    font-size: 1.6em;
+    margin: 20px;
+    border-bottom: 1px solid #efb810;
+    padding: 14px;
+
+    @media only screen and (max-width: 1000px) {
+        font-size: 0.75em;
+    }    
+`;
 
 export const Button = styled.button`
     width: 150px;
@@ -62,6 +80,20 @@ export const Button = styled.button`
     color: #FFF;
     border-radius: 7px;
 `;
+
+export const IFrame = styled.iframe`
+width:650px;
+height:467px;
+frameBorder:0;
+allow-transparency:true;
+margin-width:0;
+margin-height:0;
+
+@media only screen and (max-width: 1000px) {
+    width:99%;
+}  
+`;
+
 export const ButtonAction = styled.button`
     width: 100px;
     height: 40px;
@@ -77,3 +109,19 @@ export const Span = styled.span`
     font-size: 1rem;
     color: #FFF;
 `;
+
+export const InvestingCard = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    margin-bottom: 40px;
+
+    @media only screen and (max-width: 1000px) {
+        flex-direction: column;
+    }
+`;
+

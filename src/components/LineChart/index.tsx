@@ -49,7 +49,7 @@ export function LineChart() {
     }, [])
 
     return (
-        <div style={{ width: '100%' }}>
+        <div style={{ width: '100%', height:'100%' }}>
             <Line options={options} data={
                 {
                     labels: dataValue.map((valueData) => monthName[parseInt(valueData.month)]),
