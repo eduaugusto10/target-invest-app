@@ -12,12 +12,16 @@ interface IProfile {
     email: string
     account: number
     ativated: string
+    balance: number
+    balanceToday: number
 }
 
 function Admin() {
     const history = useNavigate()
     const [dataValue, setDataValue] = useState<IProfile[]>([])
     const [updateList, setUpdateList] = useState<boolean>(false)
+    const [balance, setBalance] = useState<number>()
+    const [balanceToday, setBlanaceToday] = useState<number>()
     function CreateUser() {
         history("/create");
     }
@@ -28,6 +32,15 @@ function Admin() {
 
     function AddValueMonth(id: number) {
         history("/changevalue", { state: { id } })
+    }
+
+    function handleBalanceToday() {
+        let sumBalance = 0;
+        for (let i = 0; i < dataValue.length; i++) {
+            sumBalance += dataValue[i].balanceToday === undefined ? 0 : dataValue[i].balanceToday
+            console.log(dataValue[i].balanceToday)
+        }
+        return sumBalance
     }
 
     function DeleteUser(e: number) {
@@ -59,7 +72,10 @@ function Admin() {
     return (
         <div style={{ backgroundColor: '#000', minHeight: '100vh' }}>
             <Header />
-            <Button onClick={CreateUser}>Criar usuário</Button>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <Button onClick={CreateUser}>Criar usuário</Button>
+                <Text>Seu lucro de hoje até o momento é de R${handleBalanceToday()}</Text>
+            </div>
             {dataValue && dataValue.map((dataValues, index) => (
                 <List key={index}>
                     <MiniDiv>
@@ -75,8 +91,12 @@ function Admin() {
                         <Text>{dataValues.account}</Text>
                     </MiniDiv>
                     <MiniDiv>
-                        <Text>Ativo</Text>
-                        <Text>{dataValues.ativated==="S"?"Sim":"Não"}</Text>
+                        <Text>Ganho Mensal</Text>
+                        <Text>{`R$${dataValues.balanceToday === undefined ? 0 : dataValues.balance}`}</Text>
+                    </MiniDiv>
+                    <MiniDiv>
+                        <Text>Ganho de Hoje</Text>
+                        <Text>{`R$${dataValues.balanceToday === undefined ? 0 : dataValues.balanceToday}`}</Text>
                     </MiniDiv>
                     <ButtonAction onClick={() => {
                         ChangeUser(dataValues.id);

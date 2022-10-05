@@ -42,7 +42,7 @@ export const MiniDiv = styled.div`
 
 export const List = styled.li`
   display: grid;
-  grid-template-columns: 25% 25% 10% 10% 10% 10%;
+  grid-template-columns: 20% 20% 10% 10% 10% 10% 10% 10%;
   grid-gap: 10px;
   border-bottom: 1px solid #ffdc70;
   text-align: center;
