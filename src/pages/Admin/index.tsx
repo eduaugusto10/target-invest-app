@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, List, Text, MiniDiv, ButtonAction } from "../../styleglobal";
 import Header from "../../components/Header";
 import { useNavigate } from 'react-router-dom'
-import { getToken, logoutToken } from '../../service/auth'
+import { getAdminKey, getToken, logoutToken } from '../../service/auth'
 import api from "../../service/api";
 import { errorMessageDelete, successMessageDelete, errorSession } from "../../components/ToastConfig";
 
@@ -54,6 +54,9 @@ function Admin() {
         }
     }
     useEffect(() => {
+        if(getAdminKey()!=="Eu sou administrador") {
+            history("/");
+        }
         api.get('/user', {
             headers: {
                 'Authorization': `Bearer ${getToken()}`
