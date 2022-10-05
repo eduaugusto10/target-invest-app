@@ -38,7 +38,6 @@ function Admin() {
         let sumBalance = 0;
         for (let i = 0; i < dataValue.length; i++) {
             sumBalance += dataValue[i].balanceToday === undefined ? 0 : dataValue[i].balanceToday
-            console.log(dataValue[i].balanceToday)
         }
         return sumBalance
     }

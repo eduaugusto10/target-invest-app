@@ -53,11 +53,8 @@ export function LineChart() {
                 'Authorization': `Bearer ${getToken()}`
             }
         }).then(result => {
-            console.log(result)
-            console.log(getID())
             setDataValue(result.data)
         }).catch(error => {
-            console.log("sessão finalizada")
             logoutToken()
             history("/");
         })
