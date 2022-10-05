@@ -42,13 +42,23 @@ export const MiniDiv = styled.div`
 
 export const List = styled.li`
   display: grid;
-  grid-template-columns: 30% 30% 10% 10% 10%;
+  grid-template-columns: 25% 25% 10% 10% 10% 10%;
   grid-gap: 10px;
   border-bottom: 1px solid #ffdc70;
   text-align: center;
 `;
 
 export const Input = styled.input`
+    width: 300px;
+    height: 30px;
+    border-radius: 7px;
+    padding-left: 10px;
+    margin: 10px;
+    border: 2px solid #efb810;
+    color: black;
+    font-size: 1.2rem;
+`;
+export const Select = styled.select`
     width: 300px;
     height: 30px;
     border-radius: 7px;

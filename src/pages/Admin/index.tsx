@@ -11,6 +11,7 @@ interface IProfile {
     name: string
     email: string
     account: number
+    ativated: string
 }
 
 function Admin() {
@@ -72,6 +73,10 @@ function Admin() {
                     <MiniDiv>
                         <Text>Nº da Conta</Text>
                         <Text>{dataValues.account}</Text>
+                    </MiniDiv>
+                    <MiniDiv>
+                        <Text>Ativo</Text>
+                        <Text>{dataValues.ativated==="S"?"Sim":"Não"}</Text>
                     </MiniDiv>
                     <ButtonAction onClick={() => {
                         ChangeUser(dataValues.id);
