@@ -15,7 +15,7 @@ function Main() {
             <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center', alignContent: 'center', alignItems: 'center' }}>
                 <div  style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center', alignContent: 'center', alignItems: 'center' }}>
                     <Title >Este é o resultado mensal dos seus investimentos conosco</Title>
-                    <Card>
+                    <Card style={{backgroundColor:'#FFF'}}>
                         <LineChart />
                     </Card>
                 </div>

@@ -25,7 +25,22 @@ export const options = {
             text: 'Lucro versus Prejuízo Mensal',
         },
     },
+    scales: {
+        x: {
+            grid: {
+                drawBorder: true,
+                color: '#c3c3c3'
 
+              }
+        },
+        y: {
+            grid: {
+                drawBorder: true,
+                color: '#c3c3c3'
+
+              }
+        }
+    }
 };
 export function LineChart() {
     const history = useNavigate()
@@ -49,7 +64,7 @@ export function LineChart() {
     }, [])
 
     return (
-        <div style={{ width: '100%', height:'100%' }}>
+        <div style={{ width: '100%', height: '100%' }}>
             <Line options={options} data={
                 {
                     labels: dataValue.map((valueData) => monthName[parseInt(valueData.month)]),
@@ -58,7 +73,8 @@ export function LineChart() {
                             label: 'Saldo Mensal',
                             data: dataValue.map((valueData) => valueData.balance),
                             borderColor: '#efb810',
-                            backgroundColor: '#efb810'
+                            backgroundColor: '#efb810',
+                            tension: 0.1
                         }],
                 }
             } />
