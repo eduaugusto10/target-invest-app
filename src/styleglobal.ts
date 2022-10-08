@@ -35,13 +35,10 @@ export const CardChard = styled.div`
     padding: 30px;
     margin: 30px;
     text-align: left;
-    width: 330px;    
+    width: 60%;    
     align-content: center;
     align-items: center;
-    @media only screen and (max-width: 1000px) {
-        height: 100%;
-        width: 220px;
-    }  
+
 `
 export const Text = styled.span`
     font-size: 1rem;
@@ -53,14 +50,20 @@ export const Text = styled.span`
 export const MiniDiv = styled.div`
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 1000px) {
+    flex-direction: row;
+}
 `;
 
 export const List = styled.li`
   display: grid;
-  grid-template-columns: 20% 20% 10% 10% 10% 10% 10% 10%;
+  grid-template-columns: 20% 20% 10% 10% 10% 25% ;
   grid-gap: 10px;
   border-bottom: 1px solid #ffdc70;
   text-align: center;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: repeat(1, 1fr);
+}
 `;
 
 export const Input = styled.input`
@@ -73,20 +76,21 @@ export const Input = styled.input`
     color: black;
     font-size: 1.2rem;
     @media only screen and (max-width: 1000px) {
-        width: 200px;
         font-size: 1rem;
-        height: 20px;
     }
 `;
 export const Select = styled.select`
-    width: 300px;
+    width: 315px;
     height: 30px;
-    border-radius: 7px;
+    border-radius: 4px;
     padding-left: 10px;
     margin: 10px;
     border: 2px solid #efb810;
     color: black;
     font-size: 1.2rem;
+    @media only screen and (max-width: 1000px) {     
+        font-size: 1rem;
+    }
 `;
 export const Title = styled.span`
     color: #FFF;
@@ -101,7 +105,7 @@ export const Title = styled.span`
 `;
 
 export const Button = styled.button`
-    width: 150px;
+    width: 147px;
     height: 40px;
     font-size: 1.2rem;
     cursor: pointer;
@@ -125,7 +129,7 @@ margin-height:0;
 `;
 
 export const ButtonAction = styled.button`
-    width: 100px;
+    width: 50%;
     height: 40px;
     font-size: 1rem;
     cursor: pointer;

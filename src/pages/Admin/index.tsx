@@ -20,8 +20,7 @@ function Admin() {
     const history = useNavigate()
     const [dataValue, setDataValue] = useState<IProfile[]>([])
     const [updateList, setUpdateList] = useState<boolean>(false)
-    const [balance, setBalance] = useState<number>()
-    const [balanceToday, setBlanaceToday] = useState<number>()
+    
     function CreateUser() {
         history("/create");
     }
@@ -30,9 +29,6 @@ function Admin() {
         history("/change", { state: { id } });
     }
 
-    function AddValueMonth(id: number) {
-        history("/changevalue", { state: { id } })
-    }
 
     function handleBalanceToday() {
         let sumBalance = 0;
@@ -54,7 +50,7 @@ function Admin() {
         }
     }
     useEffect(() => {
-        if(getAdminKey()!=="Eu sou administrador") {
+        if (getAdminKey() !== "Eu sou administrador") {
             history("/");
         }
         api.get('/user', {
@@ -74,7 +70,7 @@ function Admin() {
     return (
         <div style={{ backgroundColor: '#000', minHeight: '100vh' }}>
             <Header />
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <Button onClick={CreateUser}>Criar usuário</Button>
                 <Text>Seu lucro de hoje até o momento é de R${handleBalanceToday()}</Text>
             </div>
@@ -100,15 +96,17 @@ function Admin() {
                         <Text>Ganho de Hoje</Text>
                         <Text>{`R$${dataValues.balanceToday === undefined ? 0 : dataValues.balanceToday}`}</Text>
                     </MiniDiv>
-                    <ButtonAction onClick={() => {
-                        ChangeUser(dataValues.id);
-                    }}>Perfil</ButtonAction>
-                    {/*<ButtonAction onClick={() => {
+                    <div style={{width: '100%', display: 'flex', flexDirection: 'row' }}>
+                        <ButtonAction onClick={() => {
+                            ChangeUser(dataValues.id);
+                        }}>Perfil</ButtonAction>
+                        {/*<ButtonAction onClick={() => {
                         AddValueMonth(dataValues.id);
                     }}>Saldo</ButtonAction>*/}
-                    <ButtonAction onClick={() => {
-                        DeleteUser(dataValues.id);
-                    }} style={{ backgroundColor: 'red' }} >Deletar</ButtonAction>
+                        <ButtonAction onClick={() => {
+                            DeleteUser(dataValues.id);
+                        }} style={{ backgroundColor: 'red' }} >Deletar</ButtonAction>
+                    </div>
                 </List>
             ))}
         </div>

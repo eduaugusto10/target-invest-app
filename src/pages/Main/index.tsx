@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../../components/Header";
 import { LineChart } from "../../components/LineChart";
-import api from "../../service/api";
-import { Card, Container, InvestingCard, Title, IFrame, CardChard } from "../../styleglobal";
+import { Container, InvestingCard, Title, IFrame, CardChard } from "../../styleglobal";
 
 
 function Main() {

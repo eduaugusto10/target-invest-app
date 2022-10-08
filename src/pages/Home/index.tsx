@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { Input, Container, Button, Card, Text, Image, Span } from '../../styleglobal';
+import { Input, Container, Button, Card, Text, Span } from '../../styleglobal';
 import { ReactComponent as Logo } from '../../assets/svg.svg'
 import api from '../../service/api';
 import { isAuthenticated, setID, setToken, setName, setAdminKey } from '../../service/auth';
@@ -54,7 +54,7 @@ function Home() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
           />
         </div>
-        <div style={{width:'100%',textAlign:'right',marginTop:'-10px',marginBottom:'10px', paddingRight:'15px'}}>
+        <div style={{ width: '100%', textAlign: 'right', marginTop: '-10px', marginBottom: '10px', paddingRight: '15px' }}>
           <Span>Esqueci minha senha</Span>
         </div>
         <Button onClick={handleAuthenticated}>Acessar</Button>

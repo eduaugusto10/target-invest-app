@@ -19,9 +19,8 @@ function Header() {
             <div style={{ display: 'flex', flexDirection: 'row', margin: '20px' }}>
                 <ToastContainer />
                 {getAdminKey() === "Eu sou administrador" && <Button onClick={() => history('/admin')} style={{ padding: '0px', margin: '0px' }}>Administrador</Button>}
-                <Text>Olá, {getName()}</Text>
                 <div onClick={handleLogout} style={{ borderRadius: '5px', border: '1px solid #c4c4c4', cursor: 'pointer', padding: '7px' }}>
-                    <Logout width={20} height={20} />
+                    <Logout width={20} height={20} style={{}}/>
                     <Text style={{ fontSize: '1em' }}>Sair</Text>
                 </div>
             </div>
