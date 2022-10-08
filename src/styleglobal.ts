@@ -19,7 +19,21 @@ export const Card = styled.div`
     flex-direction: column;
     border: 2px solid #efb810;
     padding: 30px;
-
+    text-align: left;
+    width: 330px;    
+    align-content: center;
+    align-items: center;
+    @media only screen and (max-width: 1000px) {
+        height: 100%;
+        width: 220px;
+    }  
+`
+export const CardChard = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #efb810;
+    padding: 30px;
+    margin: 30px;
     text-align: left;
     width: 330px;    
     align-content: center;

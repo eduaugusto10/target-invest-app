@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import { LineChart } from "../../components/LineChart";
 import api from "../../service/api";
-import { Card, Container, InvestingCard, Title, IFrame } from "../../styleglobal";
+import { Card, Container, InvestingCard, Title, IFrame, CardChard } from "../../styleglobal";
 
 
 function Main() {
@@ -15,9 +15,9 @@ function Main() {
             <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center', alignContent: 'center', alignItems: 'center' }}>
                 <div  style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center', alignContent: 'center', alignItems: 'center' }}>
                     <Title >Este é o resultado mensal dos seus investimentos conosco</Title>
-                    <Card style={{backgroundColor:'#FFF'}}>
+                    <CardChard style={{backgroundColor:'#FFF'}}>
                         <LineChart />
-                    </Card>
+                    </CardChard>
                 </div>
                 <Title>Notícias do Mercado Financeiro</Title>
                 <InvestingCard>
