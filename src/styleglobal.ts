@@ -77,9 +77,24 @@ export const Input = styled.input`
     font-size: 1.2rem;
     @media only screen and (max-width: 1000px) {
         font-size: 1rem;
+    }
+`;
+
+export const InputLogin = styled.input`
+    width: 300px;
+    height: 30px;
+    border-radius: 4px;
+    padding-left: 10px;
+    margin: 10px;
+    border: 2px solid #efb810;
+    color: black;
+    font-size: 1.2rem;
+    @media only screen and (max-width: 1000px) {
+        font-size: 1rem;
         width: 200px;
     }
 `;
+
 export const Select = styled.select`
     width: 315px;
     height: 30px;

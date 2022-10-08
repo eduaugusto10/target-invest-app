@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { Input, Container, Button, Card, Text, Span } from '../../styleglobal';
+import { InputLogin, Container, Button, Card, Text, Span } from '../../styleglobal';
 import { ReactComponent as Logo } from '../../assets/svg.svg'
 import api from '../../service/api';
 import { isAuthenticated, setID, setToken, setName, setAdminKey } from '../../service/auth';
@@ -40,14 +40,14 @@ function Home() {
       <Card>
         <div>
           <Text>E-mail</Text>
-          <Input
+          <InputLogin
             placeholder='E-mail'
             type={'email'}
             value={email}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
           />
           <Text>Senha</Text>
-          <Input
+          <InputLogin
             placeholder='Senha'
             type={'password'}
             value={password}
