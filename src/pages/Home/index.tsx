@@ -38,21 +38,25 @@ function Home() {
       <ToastContainer />
       <Logo width={200} height={200} />
       <Card>
-        <Text>E-mail</Text>
-        <Input
-          placeholder='E-mail'
-          type={'email'}
-          value={email}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-        />
-        <Text>Senha</Text>
-        <Input
-          placeholder='Senha'
-          type={'password'}
-          value={password}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-        />
-        <Span>Esqueci minha senha</Span>
+        <div>
+          <Text>E-mail</Text>
+          <Input
+            placeholder='E-mail'
+            type={'email'}
+            value={email}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+          />
+          <Text>Senha</Text>
+          <Input
+            placeholder='Senha'
+            type={'password'}
+            value={password}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+          />
+        </div>
+        <div style={{width:'100%',textAlign:'right',marginTop:'-10px',marginBottom:'10px', paddingRight:'15px'}}>
+          <Span>Esqueci minha senha</Span>
+        </div>
         <Button onClick={handleAuthenticated}>Acessar</Button>
       </Card>
     </Container>

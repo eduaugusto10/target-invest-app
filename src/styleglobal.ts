@@ -19,13 +19,14 @@ export const Card = styled.div`
     flex-direction: column;
     border: 2px solid #efb810;
     padding: 30px;
-    margin: 30px;
+
     text-align: left;
-    width: 60%;    
+    width: 330px;    
     align-content: center;
     align-items: center;
     @media only screen and (max-width: 1000px) {
         height: 100%;
+        width: 220px;
     }  
 `
 export const Text = styled.span`
@@ -51,7 +52,7 @@ export const List = styled.li`
 export const Input = styled.input`
     width: 300px;
     height: 30px;
-    border-radius: 7px;
+    border-radius: 4px;
     padding-left: 10px;
     margin: 10px;
     border: 2px solid #efb810;
@@ -93,7 +94,7 @@ export const Button = styled.button`
     margin: 10px;
     background-color: #efb810;
     color: #FFF;
-    border-radius: 7px;
+    border-radius: 4px;
 `;
 
 export const IFrame = styled.iframe`
@@ -121,7 +122,7 @@ export const ButtonAction = styled.button`
 `;
 
 export const Span = styled.span`
-    font-size: 1rem;
+font-size: 0.75rem;
     color: #FFF;
 `;
 
