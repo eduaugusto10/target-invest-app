@@ -59,6 +59,8 @@ export const Input = styled.input`
     font-size: 1.2rem;
     @media only screen and (max-width: 1000px) {
         width: 200px;
+        font-size: 1rem;
+        height: 20px;
     }
 `;
 export const Select = styled.select`
