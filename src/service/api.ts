@@ -3,7 +3,7 @@ import { getToken } from './auth'
 
 const api = axios.create({
     //baseURL: "http://localhost:5000"
-    baseURL: "http://3.23.20.28/api"
+    baseURL: "https://rentabilidadestargetinvest.com.br/api"
 })
 
 api.interceptors.request.use(function (config) {
