@@ -57,6 +57,9 @@ export const Input = styled.input`
     border: 2px solid #efb810;
     color: black;
     font-size: 1.2rem;
+    @media only screen and (max-width: 1000px) {
+        width: 200px;
+    }
 `;
 export const Select = styled.select`
     width: 300px;
