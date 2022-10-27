@@ -12,6 +12,7 @@ interface IOperation {
     balance: number
     period: string
     year: string
+    day: string
 }
 
 export const options = {
@@ -31,40 +32,41 @@ export const options = {
                 drawBorder: true,
                 color: '#c3c3c3'
 
-              }
+            }
         },
         y: {
             grid: {
                 drawBorder: true,
                 color: '#c3c3c3'
 
-              }
+            }
         }
     }
 };
-export function LineChart() {
+export function LineChart(days: any) {
     const history = useNavigate()
     const [dataValue, setDataValue] = useState<IOperation[]>([])
-    const monthName = ['', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+    const monthName = ['', 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 
-    {/*useEffect(() => {
-        api.get(`/balance/${getID()}`, {
+    useEffect(() => {
+        api.get(`/balance/${getID()}/${days.days}`, {
             headers: {
                 'Authorization': `Bearer ${getToken()}`
             }
         }).then(result => {
+            console.log(days)
             setDataValue(result.data)
         }).catch(error => {
             logoutToken()
             history("/");
         })
-    }, [])*/}
+    }, [days])
 
     return (
-        <div style={{ width: '100%', height: '85%', backgroundColor:'#fff' }}>
+        <div style={{ width: '100%', height: '85%', backgroundColor: '#fff' }}>
             <Line options={options} data={
                 {
-                    labels: dataValue.map((valueData) => monthName[parseInt(valueData.month)]),
+                    labels: dataValue.map((valueData) => days.days > 30 ? monthName[parseInt(valueData.month)] : parseInt(valueData.day)),
                     datasets: [
                         {
                             label: 'Saldo Mensal',

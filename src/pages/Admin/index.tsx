@@ -112,7 +112,7 @@ function Admin() {
                     }}>Saldo</ButtonAction>*/}
                         <ButtonAction onClick={() => {
                             DarfUser(dataValues.id);
-                        }} style={{ backgroundColor: 'blue' }} >Darf</ButtonAction>
+                        }} style={{ backgroundColor: 'blue' }} >Ajustes</ButtonAction>
                         <ButtonAction onClick={() => {
                             DeleteUser(dataValues.id);
                         }} style={{ backgroundColor: 'red' }} >Deletar</ButtonAction>

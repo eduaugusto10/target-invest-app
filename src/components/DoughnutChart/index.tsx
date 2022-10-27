@@ -3,27 +3,33 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
+interface IBalance {
+  patrimony?: number
+  balance: number
+  balanceFree: number
+  releases: number
+}
 
-export const data = {
-  labels: ['Patrimônio', 'Lançamentos'],
-  datasets: [
-    {
-      label: '# of Votes',
-      data: [12, 19],
-      backgroundColor: [
-        '#000',
-        '#efb810',
-      ],
-      borderColor: [
-        '#000',
-        '#F8FD04',
-      ],
+export function DoughnutChart({ releases, balance,patrimony,balanceFree }: IBalance) {
 
-      borderWidth: 1,
-    },
-  ],
-};
+  const data = {
+    labels: ['Patrimônio', 'Lançamentos'],
+    datasets: [
+      {
+        label: '# of Votes',
+        data: [patrimony, releases],
+        backgroundColor: [
+          '#000',
+          '#efb810',
+        ],
+        borderColor: [
+          '#000',
+          '#F8FD04',
+        ],
 
-export function DoughnutChart() {
+        borderWidth: 1,
+      },
+    ],
+  };
   return <Doughnut data={data} />;
 }

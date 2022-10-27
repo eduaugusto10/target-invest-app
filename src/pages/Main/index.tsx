@@ -6,8 +6,6 @@ import { Container, InvestingCard, Title, IFrame, CardChard } from "../../styleg
 
 function Main() {
 
-
-
     return (
         <Container>
             <Header />

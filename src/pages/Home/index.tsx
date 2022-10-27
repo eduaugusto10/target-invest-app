@@ -11,7 +11,7 @@ function Home() {
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
 
-  if (isAuthenticated() === true) history("/main")
+  if (isAuthenticated() === true) history("/balance")
 
   async function handleAuthenticated() {
     try {

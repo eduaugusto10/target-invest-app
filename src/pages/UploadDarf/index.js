@@ -14,6 +14,10 @@ export function UploadDarf() {
     const [urlFile, setUrlFile] = useState()
     const [valueDarf, setValueDarf] = useState()
     const [dueDate, setDueDate] = useState()
+    const [patrimony, setPatrimony] = useState()
+    const [balance, setBalance] = useState()
+    const [balanceFree, setBalanceFree] = useState()
+    const [releases, setReleases] = useState()
 
     const uploadFile = async event => {
         const file = event.target.files[0];
@@ -52,6 +56,16 @@ export function UploadDarf() {
             console.log(err)
         }
     }
+    const handleSaveBalance = () => {
+        try {
+            api.post('/patrimony', { patrimony, balance, balanceFree, releases, customer: location.state.id }).then(result => {
+                console.log('arquivo salvo')
+                history("/admin")
+            })
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return (
         <Container>
@@ -65,6 +79,18 @@ export function UploadDarf() {
             <div>
                 <Button onClick={() => history("/admin")}>Voltar</Button>
                 <Button onClick={() => handleSaveDarf()}>Salvar</Button>
+            </div>
+            <Text>Patrimônio total</Text>
+            <Input type="number" onChange={e => setPatrimony(e.target.value)} />
+            <Text>Saldo bloqueado</Text>
+            <Input type='number' onChange={e => setBalance(e.target.value)} />
+            <Text>Disponível para investir</Text>
+            <Input type='number' onChange={e => setBalanceFree(e.target.value)} />
+            <Text>Lançamentos futuros</Text>
+            <Input type='number' onChange={e => setReleases(e.target.value)} />
+            <div>
+                <Button onClick={() => history("/admin")}>Voltar</Button>
+                <Button onClick={() => handleSaveBalance()}>Salvar</Button>
             </div>
         </Container>
     )

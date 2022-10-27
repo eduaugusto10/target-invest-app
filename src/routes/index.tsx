@@ -13,11 +13,11 @@ const Router = () => (
     <BrowserRouter>
         <Routes>
             <Route path='/login' element={<Home />} />
-            <Route path='/balance' element={Balance} />
+            <Route path='/balance' element={<Balance />} />
             <Route path='/change' element={<ChangeUser />} />
             <Route path='/changevalue' element={<ChangeValueUser />} />
             <Route path='/create' element={<CreateUser />} />
-            <Route path='/main' element={<Main />} />
+            <Route path='/main' element={<Balance />} />
             <Route path='/admin' element={<Admin />} />
             <Route path='/darf' element={<UploadDarf />} />
             <Route path='/' element={<Home />} />

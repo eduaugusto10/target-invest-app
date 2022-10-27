@@ -2,8 +2,8 @@ import axios from "axios";
 import { getToken } from './auth'
 
 const api = axios.create({
-    baseURL: "http://localhost:5000"
-    // baseURL: "https://rentabilidadestargetinvest.com.br/api"
+    // baseURL: "http://localhost:5000"
+    baseURL: "https://rentabilidadestargetinvest.com.br/api"
 })
 
 api.interceptors.request.use(function (config) {
