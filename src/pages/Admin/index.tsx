@@ -28,6 +28,9 @@ function Admin() {
     function ChangeUser(id: number) {
         history("/change", { state: { id } });
     }
+    function DarfUser(id: number) {
+        history("/darf", { state: { id } });
+    }
 
 
     function handleBalanceToday() {
@@ -40,7 +43,11 @@ function Admin() {
 
     function DeleteUser(e: number) {
         try {
-            api.delete(`/user/${e}`).then(result => {
+            api.delete(`/user/${e}`,{
+                headers: {
+                    'Authorization': `Bearer ${getToken()}`
+                }
+            }).then(result => {
                 setUpdateList(true)
                 successMessageDelete()
             })
@@ -103,6 +110,9 @@ function Admin() {
                         {/*<ButtonAction onClick={() => {
                         AddValueMonth(dataValues.id);
                     }}>Saldo</ButtonAction>*/}
+                        <ButtonAction onClick={() => {
+                            DarfUser(dataValues.id);
+                        }} style={{ backgroundColor: 'blue' }} >Darf</ButtonAction>
                         <ButtonAction onClick={() => {
                             DeleteUser(dataValues.id);
                         }} style={{ backgroundColor: 'red' }} >Deletar</ButtonAction>

@@ -28,6 +28,24 @@ export const Card = styled.div`
         width: 220px;
     }  
 `
+
+export const CardBlack = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    border: 2px solid #efb810;
+    padding: 5px;
+    border-radius:20px;
+    text-align: left;
+    width: 20%;
+    height: 100px;    
+    align-content: center;
+    align-items: center;
+    @media only screen and (max-width: 1000px) {
+        height: 100%;
+        width: 220px;
+    }  
+`
 export const CardChard = styled.div`
     display: flex;
     flex-direction: column;
@@ -132,7 +150,7 @@ export const Button = styled.button`
 `;
 
 export const IFrame = styled.iframe`
-width:650px;
+width:550px;
 height:467px;
 frameBorder:0;
 allow-transparency:true;

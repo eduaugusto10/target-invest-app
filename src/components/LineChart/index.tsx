@@ -21,7 +21,7 @@ export const options = {
             position: 'top' as const,
         },
         title: {
-            display: true,
+            display: false,
             text: 'Lucro versus Prejuízo Mensal',
         },
     },
@@ -47,7 +47,7 @@ export function LineChart() {
     const [dataValue, setDataValue] = useState<IOperation[]>([])
     const monthName = ['', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
-    useEffect(() => {
+    {/*useEffect(() => {
         api.get(`/balance/${getID()}`, {
             headers: {
                 'Authorization': `Bearer ${getToken()}`
@@ -58,10 +58,10 @@ export function LineChart() {
             logoutToken()
             history("/");
         })
-    }, [])
+    }, [])*/}
 
     return (
-        <div style={{ width: '100%', height: '100%' }}>
+        <div style={{ width: '100%', height: '85%', backgroundColor:'#fff' }}>
             <Line options={options} data={
                 {
                     labels: dataValue.map((valueData) => monthName[parseInt(valueData.month)]),
