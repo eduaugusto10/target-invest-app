@@ -43,9 +43,87 @@ export const CardBlack = styled.div`
     align-items: center;
     @media only screen and (max-width: 1000px) {
         height: 100%;
-        width: 220px;
+        width: 80%;
     }  
 `
+export const DivBalance = styled.div`
+display: flex;
+flex-direction: row;
+width: 80%;
+justify-content: space-around;
+margin: 10px;
+@media only screen and (max-width: 1000px) {
+    flex-direction: column;
+    width: 100%;
+    align-items:center;
+} 
+`;
+export const Rentab = styled.div`
+width: 55%;
+border-radius: 20px;
+padding: 20px;
+background-color: #D4D4D4;
+margin: 15px;
+@media only screen and (max-width: 1000px) {
+    width: 100%;
+} 
+`;
+export const Donunts = styled.div`
+width: 35%;
+border-radius: 20px;
+padding: 20px;
+background-color: #D4D4D4;
+margin: 15px;
+@media only screen and (max-width: 1000px) {
+    width: 100%;
+} 
+`;
+
+export const DivBalance2 = styled.div`
+width: 80%;
+display: flex;
+flex-direction: row;
+@media only screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items:center;
+} 
+`;
+export const Darf = styled.div`
+width: 47%;
+border-radius: 20px;
+padding: 20px;
+background-color: #D4D4D4; 
+margin: 15px;
+@media only screen and (max-width: 1000px) {
+    width: 100%;
+    margin: 5px;
+} 
+`;
+export const Investing = styled.div`
+display: flex;
+flex-direction: column;
+width: 53%;
+border-radius: 20px;
+padding: 20px;
+background-color: #D4D4D4;
+margin: 15px;
+@media only screen and (max-width: 1000px) {
+    width: 100%;
+    border-radius: 20px;
+    padding: 0px;
+    background-color: #D4D4D4;
+    margin: 0px;
+    } 
+`;
+
+export const ButtonTime = styled.button`
+border: none;
+borderRadius: 20px;
+width: 90px;
+height: 25px;
+backgroundColor: #DEDCDC;
+cursor: pointer;
+`;
 export const CardChard = styled.div`
     display: flex;
     flex-direction: column;
