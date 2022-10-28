@@ -4,7 +4,6 @@ import Home from "../pages/Home";
 import ChangeUser from "../pages/ChangeUser";
 import ChangeValueUser from "../pages/ChangeValueUser";
 import CreateUser from "../pages/Create";
-import Main from "../pages/Main";
 import Admin from "../pages/Admin";
 import Balance from "../pages/Balance";
 import { UploadDarf } from "../pages/UploadDarf";

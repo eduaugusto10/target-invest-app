@@ -1,5 +1,5 @@
 import 'react-toastify/dist/ReactToastify.css';
-import { Button, Text } from '../../styleglobal'
+import { Text } from '../../styleglobal'
 
 function Footer() {
     return (

@@ -107,9 +107,6 @@ function Admin() {
                         <ButtonAction onClick={() => {
                             ChangeUser(dataValues.id);
                         }}>Perfil</ButtonAction>
-                        {/*<ButtonAction onClick={() => {
-                        AddValueMonth(dataValues.id);
-                    }}>Saldo</ButtonAction>*/}
                         <ButtonAction onClick={() => {
                             DarfUser(dataValues.id);
                         }} style={{ backgroundColor: 'blue' }} >Ajustes</ButtonAction>

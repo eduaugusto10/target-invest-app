@@ -1,11 +1,10 @@
 import React from 'react'
 import { ReactComponent as Logo } from '../../assets/svg.svg'
 import { ReactComponent as Logout } from '../../assets/log-out.svg'
-import { ReactComponent as Bell } from '../../assets/bell.svg'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button, Text } from '../../styleglobal'
-import { logoutToken, deleteID, getName, getAdminKey } from '../../service/auth'
+import { logoutToken, deleteID, getAdminKey } from '../../service/auth'
 import { useNavigate } from 'react-router-dom'
 function Header() {
     const history = useNavigate()

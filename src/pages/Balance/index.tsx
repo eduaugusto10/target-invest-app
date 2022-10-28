@@ -6,7 +6,7 @@ import Header from "../../components/Header"
 import { LineChart } from "../../components/LineChart"
 import api from "../../service/api"
 import { getID } from "../../service/auth"
-import { Button, ButtonTime, Card, CardBlack, Container, Darf, DivBalance, DivBalance2, Donunts, IFrame, Investing, Rentab, Text } from '../../styleglobal'
+import { ButtonTime, CardBlack, Container, Darf, DivBalance, DivBalance2, Donunts, IFrame, Investing, Rentab, Text } from '../../styleglobal'
 
 interface IDarf {
     customerDarf: number
