@@ -110,9 +110,7 @@ margin: 15px;
 @media only screen and (max-width: 1000px) {
     width: 100%;
     border-radius: 20px;
-    padding: 0px;
     background-color: #D4D4D4;
-    margin: 0px;
     } 
 `;
 
